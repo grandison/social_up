@@ -1,0 +1,120 @@
+header,
+.container,
+footer {
+  width: 800px;
+  margin: 0 auto;
+}
+
+body {
+  background: url("/assets/1.jpg") repeat scroll 0 0 transparent;
+  color: #333333;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+header {
+  .header_block {
+    padding-left: 120px; 
+    margin-top: 50px; 
+    margin-bottom: 0px;
+
+    h4 {
+      color: inherit;
+      font-family: inherit;
+      font-weight: bold;
+      line-height: 20px;
+      margin: 10px 0;
+      text-rendering: optimizelegibility;
+      margin-top: -35px; 
+      margin-left: 120px;
+    }
+
+    img.logo {
+      z-index: 1; 
+      position: relative;
+    }
+
+    img.clock_logo {
+      width: 200px; 
+      z-index: 100; 
+      position: relative;
+      width: 80px; 
+      margin-left: -442px; 
+      top: 6px;
+    }
+
+    a.btn {
+      margin-right: 24px; 
+      margin-bottom: 0px; 
+      margin-top: 0px;
+    }
+  }
+}
+
+.media-block {
+  background: url("/assets/furley_bg.png") repeat scroll 0 0 transparent;
+  border-radius: 8px 8px 8px 8px;
+  box-shadow: 1px 1px 3px;
+  margin-bottom: 20px;
+  padding: 20px 25px;
+}
+
+.main_menu {
+  margin-top: 20px;
+  overflow: hidden;
+  height: 100px;
+
+  .btn {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .friends_alarms {
+    width: 70px; 
+    margin-right: 15px;
+    text-decoration: none;
+    display: block;
+    overflow: hidden;
+    width: 310px;
+    padding: 5px;
+
+    img {
+      margin-right: 10px;
+    }
+  }
+
+  img.main_link_my_clock {
+    width: 70px;
+  }
+
+  .my_alarms {
+    margin-right: 20px;
+    text-decoration: none;
+    display: block;
+    overflow: hidden;
+    width: 230px;
+    padding: 5px;
+  }
+
+  .my_alarms:hover,
+  .my_alarms.active,
+  .friends_alarms:hover,
+  .friends_alarms.active {
+    background: url("/assets/furley_bg.png") repeat scroll 0 0 transparent;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 1px 1px 3px;
+  }
+}
+
+.media {
+  width: 400px;
+  float: left;  
+  margin: 0px 10px;
+  padding: 20px 0px;
+}
+
