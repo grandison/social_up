@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :token, :vk_id
+  attr_accessible :name, :token, :vk_id, :avatar
   before_save :set_info
 
   has_many :alarms

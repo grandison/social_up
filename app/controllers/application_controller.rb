@@ -1,6 +1,15 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
+  before_filter :create_friends
+
+  def create_friends
+    if current_user.friends.count < 10
+      current_user.vk_client.friends.get(fields: [:photo_medium]).each do |friend_params|
+        User.create(vk_id: friend_params.uid, avatar: friend_params[:photo_medium], name: "#{friend_params[:first_name]} #{friend_params[:last_name]}")
+      end
+    end
+  end
 
   def current_user
     if params[:viewer_id] && params[:access_token]
