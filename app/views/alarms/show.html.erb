@@ -1,0 +1,18 @@
+Будильник для <%= @alarm.user.name %>
+
+<input type="text" name="" class="music-search">
+
+<script>
+  $(function(){
+    $('.music-search').autocomplete(
+      {
+        source: function( request, response ) { 
+          VK.api('audio.search', {q: request.term}, function(r) { 
+            var results = $.map(r.response.slice(1, r.response.length), function(value, index){ return value['title']; });
+            response(results);
+          }); 
+        },
+      }
+    );
+  });
+</script>

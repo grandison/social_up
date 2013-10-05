@@ -1,5 +1,5 @@
 SocialUp::Application.routes.draw do
-  resources :alarms, only: [:index] do
+  resources :alarms, only: [:index, :show] do
     collection do
       get :friends
     end

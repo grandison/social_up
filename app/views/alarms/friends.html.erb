@@ -1,2 +1,4 @@
 <%= render 'users/list' %>
-<%= @alarms %>
+<% @alarms.each do |alarm| %>
+  <%= link_to "Выбрать музыку для #{alarm.user.name}", alarm %>
+<% end %>

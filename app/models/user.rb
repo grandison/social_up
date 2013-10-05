@@ -9,11 +9,11 @@ class User < ActiveRecord::Base
   end
 
   def friends
-    User.where(vk_id: vk_client.friends.get(fields: [].map(&:user_id))).to_a
+    User.where(vk_id: vk_client.friends.get(fields: [].map(&:user_id)))
   end
 
   def friends_alarms
-    Alarm.where(user_id: friends.map(&:id)).to_a
+    Alarm.where(user_id: friends.map(&:id))
   end
 
   private
