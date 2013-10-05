@@ -28,13 +28,13 @@ ActiveRecord::Schema.define(:version => 20131005160432) do
   end
 
   create_table "music_sets", :force => true do |t|
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.string   "title"
     t.integer  "aid"
     t.string   "url"
     t.integer  "alarm_id"
-    t.integer  "likes_count"
+    t.integer  "likes_count", :default => 0
   end
 
   add_index "music_sets", ["alarm_id"], :name => "index_music_sets_on_alarm_id"

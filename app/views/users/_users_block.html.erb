@@ -1,0 +1,8 @@
+<div class='users_block'>
+  <%= paginate users, remote: true %>
+  <div class='clear'></div>
+
+  <% users.each do |user| %>
+    <%= render 'users/user', user: user %>
+  <% end %>
+</div>

@@ -1,5 +1,7 @@
-<%= paginate @users, remote: true %>
-
-<% @users.each do |user| %>
-  <%= render user %>
+<% if users.present? %>
+  <%= render 'users/users_block', users: users %>
+<% else %>
+  <div class="alert alert-info">
+    Пока в системе нет ни одного вашего друга.
+  </div>
 <% end %>

@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
 
   scope :with_alarms, joins(:alarm)
 
+  def frontend_name
+    name.split(' ')[0]
+  end
+
   def vk_client
     @vk_client ||= VkontakteApi::Client.new(token)
   end
