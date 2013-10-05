@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131005090723) do
+ActiveRecord::Schema.define(:version => 20131005095605) do
 
   create_table "alarms", :force => true do |t|
     t.string   "time"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20131005090723) do
     t.string   "token"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "vk_id"
   end
 
 end
