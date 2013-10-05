@@ -1,0 +1,15 @@
+<div class="media pull-left">
+  <%= link_to '', class: 'pull-left' do %>
+    <%= image_tag "https://app.divshot.com/img/placeholder-64x64.gif", class: "media-object thumbnail" %>           
+  <% end %>
+  <div class="media-body">
+    <h4 class="media-heading">
+      <%= link_to alarm.name, '#', class: 'user_name' %>
+    </h4>
+    <p>
+      <%= link_to alarm_path(alarm), class: 'set_clock' do %>
+        <%= image_tag 'set_clock3.png' %>
+      <% end %>
+    </p>
+  </div>
+</div>
