@@ -1,10 +1,10 @@
 <div class="main_menu">
-  <%= link_to '#', class: 'friends_alarms pull-left active' do %>
+  <%= link_to friends_alarms_path, class: "friends_alarms pull-left #{friends_alarms_path? ? 'active' : ''}" do %>
     <%= image_tag 'Large_group.png', class: 'main_link_my_clock' %>
     <span class='btn btn-success'>Будилки друзей</span>
   <% end %>
 
-  <%= link_to '#', class: 'my_alarms pull-left' do %>
+  <%= link_to alarms_path, class: "my_alarms pull-left #{current_page?(alarms_path) ? 'active' : ''}" do %>
     <%= image_tag 'clock_mini.png', class: 'main_link_my_clock' %>
     <span class='btn btn-success'>Мои будилки</span>
   <% end %>
@@ -12,5 +12,5 @@
   <%= link_to '#', class: 'settings_of_alarms pull-left' do %>
     <%= image_tag 'settings.png', class: 'main_link_settings' %>
     <span class='btn btn-success'>Настройки</span>
-  <% end %>  
+  <% end %>
 </div>
