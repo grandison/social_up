@@ -1,11 +1,11 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :token, :vk_id
+  attr_accessible :name, :token, :vk_id, :avatar
   before_save :set_info
 
-  has_one :alarm
+  has_many :alarms
   has_many :likes
 
-  scope :with_alarms, joins(:alarm)
+  scope :with_alarms, joins(:alarms)
 
   def frontend_name
     name.split(' ')[0]
@@ -23,12 +23,17 @@ class User < ActiveRecord::Base
     Alarm.where(user_id: friends.map(&:id))
   end
 
+  def current_alarm
+    alarms.last
+  end
+
   private
 
   def set_info
-    if name.blank?
-      info = vk_client.users.get(uid:vk_id).first
+    if name.blank? || avatar.blank?
+      info = vk_client.users.get(uid:vk_id, fields: [:photo_medium]).first
       self.name = "#{info.first_name} #{info.last_name}"
+      self.avatar = info.photo_medium
     end
   end
 end
