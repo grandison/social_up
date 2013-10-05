@@ -4,5 +4,5 @@ development:
   host: localhost
   username: postgres
   password: postgres
-  database: social
+  database: socialup
   pool: 5
