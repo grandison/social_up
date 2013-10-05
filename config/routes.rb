@@ -8,6 +8,13 @@ SocialUp::Application.routes.draw do
       get :friends
     end
   end
-  
+
+  namespace :api do
+    namespace :v1 do
+      resources :tokens, only: [:show]
+      resources :users, only: [:update, :index]
+    end
+  end
+
   root to: "alarms#friends"
 end
