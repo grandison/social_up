@@ -1,6 +1,6 @@
 <div class="media pull-left">
   <%= link_to "http://vk.com/id#{user.vk_id}", class: 'pull-left', target: "_blank" do %>
-    <%= image_tag "https://app.divshot.com/img/placeholder-64x64.gif", class: "media-object thumbnail" %>           
+    <%= image_tag user.avatar, class: "media-object thumbnail", style: "width:64px;height:64px;" %>           
   <% end %>
   <div class="media-body">
     <h4 class="media-heading">
