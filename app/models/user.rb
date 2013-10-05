@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
     User.where(vk_id: vk_client.friends.get(fields: [].map(&:user_id))).to_a
   end
 
+  def friends_alarms
+    Alarm.where(user_id: friends.map(&:id))
+  end
+
   private
 
   def set_info
