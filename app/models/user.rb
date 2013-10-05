@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   end
 
   def friends_alarms
-    Alarm.where(user_id: friends.map(&:id))
+    Alarm.where(user_id: friends.map(&:id)).to_a
   end
 
   private
