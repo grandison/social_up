@@ -1,20 +1,5 @@
 Привет, <%= current_user.name %>!
-Вот тебе музычка:
 
-<div id="music-list">
-</div>
+<%= link_to "My alarms", alarms_path %>
+<%= link_to "My friends alarms", friends_alarms_path %>
 
-<script>
-  $(function(){
-    VK.api('audio.search', {q: "Хуй"}, function(r) { 
-      if(r.response) {
-        $.each(r.response, function( index, value ){
-          if(index != 0) {
-            var item = $("<p></p>").text(value["title"]);
-            $("#music-list").append(item);
-          };
-        });
-      };
-    }); 
-  });
-</script>
