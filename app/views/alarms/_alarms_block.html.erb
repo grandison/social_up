@@ -1,0 +1,8 @@
+<div class='alarms_block'>
+  <%= paginate alarms, remote: true %>
+  <div class='clear'></div>
+
+  <% alarms.each do |alarm| %>
+    <%= render 'alarms/alarm', alarm: alarm %>
+  <% end %>
+</div>

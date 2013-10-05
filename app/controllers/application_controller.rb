@@ -9,8 +9,10 @@ class ApplicationController < ActionController::Base
       session[:user_id] = user.id
       user.save
     else
+      session[:user_id] = 1 if session[:user_id].blank?
       user = User.find(session[:user_id])
     end
+
     user
   end
 end

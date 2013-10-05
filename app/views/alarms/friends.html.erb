@@ -1,7 +1,3 @@
 <div class='friends_container'>
-  <%= render 'users/list' %>
+  <%= render 'alarms/list', u: @alarms %>
 </div>
-
-<% @alarms.each do |alarm| %>
-  <%= link_to "Выбрать музыку для #{alarm.user.name}", alarm %>
-<% end %>
