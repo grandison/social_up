@@ -14,4 +14,4 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require jquery.ui.autocomplete
-//= require_tree .
+//= require soundmanager/soundmanager2-jsmin.js

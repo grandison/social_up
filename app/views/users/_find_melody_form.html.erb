@@ -1,0 +1,10 @@
+<%= image_tag 'music_icon2.png', class: 'music_icon pull-left' %>
+
+<%= form_for([@alarm, @music_set], remote: true, html: { class: 'melody_form' }) do |f| %>
+  <%= f.text_field :title %>
+
+  <%= f.hidden_field :aid %>
+  <%= f.hidden_field :url %>
+
+  <%= f.submit 'Искать', class: 'btn btn-info' %>
+<% end %>
