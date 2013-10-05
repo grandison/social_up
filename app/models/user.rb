@@ -2,10 +2,10 @@ class User < ActiveRecord::Base
   attr_accessible :name, :token, :vk_id
   before_save :set_info
 
-  has_one :alarm
+  has_many :alarms
   has_many :likes
 
-  scope :with_alarms, joins(:alarm)
+  scope :with_alarms, joins(:alarms)
 
   def vk_client
     @vk_client ||= VkontakteApi::Client.new(token)
@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
 
   def friends_alarms
     Alarm.where(user_id: friends.map(&:id))
+  end
+
+  def current_alarm
+    alarms.last
   end
 
   private
