@@ -2,7 +2,10 @@ class User < ActiveRecord::Base
   attr_accessible :name, :token, :vk_id
   before_save :set_info
 
-  has_many :alarms
+  has_one :alarm
+  has_many :likes
+
+  scope :with_alarms, joins(:alarm)
 
   def vk_client
     @vk_client ||= VkontakteApi::Client.new(token)

@@ -1,17 +1,34 @@
 Будильник для <%= @alarm.user.name %>
 
-<input type="text" name="" class="music-search">
+<ul id="music-list">
+  <% @alarm.music_sets.each do |music_set| %>
+    <% if music_set.persisted? %>
+      <%= render music_set %>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= form_for([@alarm, @music_set], remote: true) do |f| %>
+  <%= f.text_field :title %>
+  <%= f.hidden_field :aid %>
+  <%= f.hidden_field :url %>
+  <%= f.submit %>
+<% end %>
 
 <script>
   $(function(){
-    $('.music-search').autocomplete(
+    $('#music_set_title').autocomplete(
       {
         source: function( request, response ) { 
-          VK.api('audio.search', {q: request.term}, function(r) { 
-            var results = $.map(r.response.slice(1, r.response.length), function(value, index){ return value['title']; });
+          VK.api('audio.search', {q: request.term}, function(r) {
+            var results = $.map(r.response.slice(1, r.response.length), function(value, index){ return {value: value['title'], aid: value['aid'], url: value['url']}; });
             response(results);
           }); 
         },
+        select: function( event, ui ) {
+          $("#music_set_aid").val(ui.item.aid);
+          $("#music_set_url").val(ui.item.url);
+        }
       }
     );
   });

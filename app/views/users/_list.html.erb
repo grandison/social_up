@@ -1,5 +1,5 @@
 <%= paginate @users, remote: true %>
 
 <% @users.each do |user| %>
-  <%= render 'users/user', user: user %>
+  <%= render user %>
 <% end %>

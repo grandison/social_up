@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131005105342) do
+ActiveRecord::Schema.define(:version => 20131005160432) do
 
   create_table "alarms", :force => true do |t|
     t.string   "time"
@@ -20,13 +20,24 @@ ActiveRecord::Schema.define(:version => 20131005105342) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "likes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "music_set_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "music_sets", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.string   "title"
     t.integer  "aid"
     t.string   "url"
+    t.integer  "alarm_id"
+    t.integer  "likes_count"
   end
+
+  add_index "music_sets", ["alarm_id"], :name => "index_music_sets_on_alarm_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

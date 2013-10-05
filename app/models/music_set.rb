@@ -1,3 +1,7 @@
 class MusicSet < ActiveRecord::Base
   attr_accessible :title, :aid, :url
+  belongs_to :alarm
+  has_many :likes
+
+  validates :title, :aid, :url, presence: true
 end
