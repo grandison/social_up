@@ -26,7 +26,6 @@ class User < ActiveRecord::Base
   private
 
   def set_info
-    binding.pry
     if name.blank? || avatar.blank?
       info = vk_client.users.get(uid:vk_id, fields: [:photo_medium]).first
       self.name = "#{info.first_name} #{info.last_name}"
