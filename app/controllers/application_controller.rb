@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
   def create_friends
     if current_user.friends.count < 10
       current_user.vk_client.friends.get(fields: [:photo_medium]).each do |friend_params|
-        User.create(vk_id: friend_params.uid, avatar: friend_params[:photo_medium], name: "#{friend_params[:first_name]} #{friend_params[:last_name]}")
+        user = User.create(vk_id: friend_params.uid, avatar: friend_params[:photo_medium], name: "#{friend_params[:first_name]} #{friend_params[:last_name]}")
+        user.alarms.create(time: "08:00")
       end
     end
   end
