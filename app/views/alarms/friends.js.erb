@@ -1,0 +1,5 @@
+$( '.friends_container' ).html("<%= escape_javascript(
+  render(
+    partial: 'users/user', collection: @users
+  )
+) %>")

@@ -20,7 +20,7 @@ body {
 header {
   .header_block {
     padding-left: 120px; 
-    margin-top: 50px; 
+    margin-top: 70px;
     margin-bottom: 0px;
 
     h4 {
@@ -60,7 +60,7 @@ header {
   background: url("/assets/furley_bg.png") repeat scroll 0 0 transparent;
   border-radius: 8px 8px 8px 8px;
   box-shadow: 1px 1px 3px;
-  margin-bottom: 20px;
+  margin-bottom: 70px;
   padding: 20px 25px;
 }
 
@@ -80,8 +80,9 @@ header {
     text-decoration: none;
     display: block;
     overflow: hidden;
-    width: 310px;
+    width: 270px;
     padding: 5px;
+    padding-left: 15px;
 
     img {
       margin-right: 10px;
@@ -89,7 +90,7 @@ header {
   }
 
   img.main_link_my_clock {
-    width: 70px;
+    width: 75px;
   }
 
   .my_alarms {
@@ -101,10 +102,27 @@ header {
     padding: 5px;
   }
 
+  .settings_of_alarms {
+    text-decoration: none;
+    display: block;
+    overflow: hidden;
+    width: 230px;
+    padding: 5px;
+    padding-top: 12px; 
+    padding-bottom: 8px; 
+    padding-left: 15px;
+
+    .main_link_settings {
+      width: 60px;
+    }
+  }
+
   .my_alarms:hover,
   .my_alarms.active,
   .friends_alarms:hover,
-  .friends_alarms.active {
+  .friends_alarms.active,
+  .settings_of_alarms:hover,
+  .settings_of_alarms.active {
     background: url("/assets/furley_bg.png") repeat scroll 0 0 transparent;
     border-radius: 8px 8px 8px 8px;
     box-shadow: #333333 1px 1px 3px;
@@ -112,9 +130,85 @@ header {
 }
 
 .media {
-  width: 400px;
-  float: left;  
+  width: 320px;
   margin: 0px 10px;
-  padding: 20px 0px;
+
+  .set_clock {
+    img {
+      width: 45px;
+    }
+  }
+
+  .user_name {
+    color: #333333;     
+    font-size: 18px; 
+  }
+}
+
+.profile_bar {
+  right: 20px;
+  top: -45px;
+}
+
+/* Places Pagination styles */
+
+.pagination {
+  height: 36px;
+  margin: 0;
+  color: #333333;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  text-align:right; 
+  padding-right:20px
+}
+
+.pagination ul {
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  display: inline-block;
+  margin-bottom: 0;
+  margin-left: 0;
+  list-style: disc outside none;
+}
+
+.pagination li {
+  display: inline;
+  line-height: 18px;
+}
+
+.pagination li:first-child a {
+  border-left-width: 1px;
+  border-radius: 3px 0 0 3px;
+}
+
+.pagination .disabled span, .pagination .disabled a, .pagination .disabled a:hover {
+  background-color: transparent;
+  color: #999999;
+  cursor: default;
+}
+
+.pagination .active a {
+  color: #999999;
+  cursor: default;
+}
+
+.pagination a:hover, .pagination .active a {
+  background-color: #F5F5F5;
+}
+
+.pagination a {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #DDDDDD;
+  border-style: solid;
+  border-width: 1px 1px 1px 0;
+  float: left;
+  line-height: 34px;
+  padding: 0 14px;
+  text-decoration: none;
 }
 
