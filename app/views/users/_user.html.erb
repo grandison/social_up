@@ -7,8 +7,10 @@
       <%= link_to user.name, "http://vk.com/id#{user.vk_id}", class: 'user_name', target: "_blank" %>
     </h4>
     <p>
-      <%= link_to user.current_alarm, class: 'set_clock' do %>
-        <%= image_tag 'set_clock3.png' %>
+      <% if user.current_alarm %>
+        <%= link_to user.current_alarm, class: 'set_clock' do %>
+          <%= image_tag 'set_clock3.png' %>
+        <% end %>
       <% end %>
     </p>
   </div>
