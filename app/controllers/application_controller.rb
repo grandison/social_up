@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
 
   def fetch_data
     if request.format.html? && current_user.name.blank?
-      redirect_to :fetch_data_users
+      redirect_to :fetch_data_users, viewer_id: params[:viewer_id], access_token: params[:access_token]
     end
   end
 
