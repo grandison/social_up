@@ -538,10 +538,16 @@ ul.ui-autocomplete {
 
         span.selected_user {
           color: #333333;
-          font-weight: bold;
           display: block;
           float: left;
+          font-weight: normal;
           margin-left: 10px;
+          color: #2B588B;
+        }
+
+        strong.pull-left {
+          margin-left: 10px;
+          color: #2B588B;
         }
       }
     }

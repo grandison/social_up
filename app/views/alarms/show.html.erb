@@ -22,7 +22,7 @@
       }
     ).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
       return $( "<li>" )
-      .append( "<a style='clear: both;'><strong>" + item['artist'] + "</strong><span class='selected_user'> " + item['value'] + "</span></a>" )
+      .append( "<a style='clear: both;'><strong class='pull-left'>" + item['artist'] + "</strong><span class='selected_user'> " + item['value'] + "</span></a>" )
       .appendTo( ul );
     };
   });
