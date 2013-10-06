@@ -8,7 +8,11 @@ class Alarm < ActiveRecord::Base
     music_sets.order("likes_count").first.try(:url)
   end
 
+  def url
+    top_music_set
+  end
+
   def as_json(options = {})
-    super(methods: :top_music_set)
+    super(methods: :url)
   end
 end
