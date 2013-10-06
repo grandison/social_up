@@ -1,6 +1,6 @@
 SocialUp::Application.routes.draw do
 
-  resources :alarms, only: [:index, :show] do
+  resources :alarms, only: [:index, :show, :create] do
     resources :music_sets, only: [:create] do |collection|
       post :like
     end
