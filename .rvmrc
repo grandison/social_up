@@ -1,1 +1,1 @@
-rvm use 2.0.0-p247@social_up --create
+rvm use 1.9.3-p448@social_up --create

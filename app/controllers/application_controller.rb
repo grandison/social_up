@@ -1,14 +1,11 @@
 class ApplicationController < ActionController::Base
   # protect_from_forgery
   helper_method :current_user
-  # before_filter :create_friends
+  before_filter :fetch_data
 
-  def create_friends
-    if current_user.friends.count < 10
-      current_user.vk_client.friends.get(fields: [:photo_medium]).each do |friend_params|
-        user = User.create(vk_id: friend_params.uid, avatar: friend_params[:photo_medium], name: "#{friend_params[:first_name]} #{friend_params[:last_name]}")
-        user.alarms.create(time: "08:00")
-      end
+  def fetch_data
+    if current_user.name.blank?
+      redirect_to :fetch_data_users
     end
   end
 
@@ -25,4 +22,6 @@ class ApplicationController < ActionController::Base
 
     user
   end
+
+
 end
