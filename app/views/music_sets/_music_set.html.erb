@@ -8,7 +8,11 @@
 
       <div class="nameTrack pull-left">
         <b>
-          <%= music_set.author %>
+          <% if music_set.author.present? %>
+            <%= music_set.author %>
+          <% else %>
+            Неизвестный исполнитель
+          <% end %>
         </b> -
         <span>
           <%= music_set.title %>
