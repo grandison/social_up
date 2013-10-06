@@ -4,7 +4,7 @@ class AlarmsController < ApplicationController
   end
 
   def friends
-    @users = current_user.friends.with_alarms.page(params[:page]).per(8)
+    @users = current_user.friends.with_alarms.page(params[:page]).per(10)
   end
 
   def show

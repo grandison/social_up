@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
 
   scope :with_alarms, joins(:alarms)
 
+  scope :by_name, -> (by_name) {
+    where("name LIKE ?", by_name)
+  }
+
   def frontend_name
     name.split(' ')[0]
   end

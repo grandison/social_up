@@ -64,7 +64,7 @@ header {
   width: 770px;
   margin-top: 10px;
   overflow: hidden;
-  height: 540px;
+  height: 560px;
 }
 
 .main_menu {
@@ -168,6 +168,7 @@ header {
   text-align:right; 
   float: right;
   margin-bottom: 30px;
+  width: 375px;
 }
 
 .pagination ul {
@@ -177,6 +178,7 @@ header {
   margin-bottom: 0;
   margin-left: 0;
   list-style: disc outside none;
+  padding-left: 0px;
 }
 
 .pagination li {
@@ -221,6 +223,7 @@ header {
 
 a.invite_friends, a.tell_to_friends {
   margin-left: 20px;
+  text-decoration: none;
 
   img {
     width: 60px;
@@ -407,4 +410,64 @@ padding:5px 45px;
 
 #soundmanager-debug {
   display: none;
+}
+
+.search_users {
+  overflow: hidden; 
+  width: 330px;
+
+  img.search_icon {
+    width: 45px; 
+    margin-top: -5px; 
+    margin-right: 5px;
+  }
+
+  #by_name {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;     
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;     
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;    
+    border-radius: 4px 4px 4px 4px;     
+    color: #555555;     
+    display: inline-block;     
+    font-size: 18px;     
+    height: 35px;     
+    line-height: 20px;     
+    margin-bottom: 10px;     
+    padding: 4px 6px;
+    width: 190px;
+  }
+
+  .btn {
+    margin-top: -5px; 
+    margin-left: 7px;
+  }
+}
+
+.invites_container.top_invites {
+  margin-top: 20px;
+  margin-right: -90px;
+
+  .tell_to_friends {
+    margin-left: 10px;
+
+    img {
+
+    }
+  }
+
+  .invite_friends {
+    img {
+      
+    }
+  }  
+}
+
+.clear_with_height_10 {
+  height: 10px;
+  clear: both;
+}
+
+.users_block {
+  margin-top: 15px;
 }

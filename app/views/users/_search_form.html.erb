@@ -1,0 +1,9 @@
+<div class='search_users pull-left'>
+  <%= image_tag 'search_icon.png', class: 'search_icon pull-left' %>
+
+  <%= form_tag users_search_index_url, remote: true do %>
+    <%= text_field_tag :by_name %>
+
+    <%= submit_tag 'Искать', class: 'btn btn-info' %>
+  <% end %>
+</div>
