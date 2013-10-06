@@ -1,6 +1,4 @@
 class AlarmsController < ApplicationController
-  skip_before_filter :fetch_data, only: [:create]
-  
   def index
     @alarms = current_user.alarms
   end

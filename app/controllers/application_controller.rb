@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :fetch_data
 
   def fetch_data
-    if current_user.name.blank?
+    if request.format.html? && current_user.name.blank?
       redirect_to :fetch_data_users
     end
   end
