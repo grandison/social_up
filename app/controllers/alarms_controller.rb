@@ -17,7 +17,7 @@ class AlarmsController < ApplicationController
   end
 
   def create
-    Alarm.create(params[:alarm])
-    render status: 200, json: "Ok"
+    @alarm = Alarm.create(params[:alarm])
+    render json: @alarm
   end
 end
