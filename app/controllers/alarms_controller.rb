@@ -8,8 +8,12 @@ class AlarmsController < ApplicationController
   end
 
   def show
-    @alarm = current_user.friends_alarms.find(params[:id])
+    @alarm = Alarm.find(params[:id])
     @music_set = @alarm.music_sets.new
+    respond_to do |format|
+      format.html
+      format.json{ render json: @alarm }
+    end
   end
 
   def create
