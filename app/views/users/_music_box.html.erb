@@ -1,0 +1,11 @@
+<div id="ajaxsPlayer">
+  <table class="table table-stripped table-bordered">
+    <tbody>
+      <% @alarm.music_sets.each_with_index do |music_set, index| %>
+        <% if music_set.persisted? %>
+          <%= render 'music_sets/music_set', music_set: music_set, index: index %>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>  
+</div>

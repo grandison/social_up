@@ -1,0 +1,21 @@
+<% 
+  user = @alarm.user
+%>
+
+<div class="media pull-left alarms_list_badge">
+  <%= link_to "http://vk.com/id#{user.vk_id}", class: 'pull-left', target: "_blank" do %>
+    <%= image_tag user.avatar, class: "media-object thumbnail", style: "width:64px;height:64px;" %>           
+  <% end %>
+  <div class="media-body">
+    <h4 class="media-heading">
+      <%= link_to user.name, "http://vk.com/id#{user.vk_id}", class: 'user_name', target: "_blank" %>
+    </h4>
+    <p>
+      <% if @alarm.music_sets.count > 0 %>
+        Выставлено <%= "#{@alarm.music_sets.count} #{Russian::pluralize(@alarm.music_sets.count, "мелодия", "мелодии", "мелодий")}" %>
+      <% else %>
+        Пока нет мелодий
+      <% end %>
+    </p>
+  </div>
+</div>

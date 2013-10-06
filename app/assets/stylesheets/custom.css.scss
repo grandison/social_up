@@ -14,13 +14,12 @@ body {
 }
 
 .container {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 header {
   .header_block {
     padding-left: 120px; 
-    margin-top: 70px;
     margin-bottom: 0px;
 
     h4 {
@@ -65,11 +64,10 @@ header {
   width: 770px;
   margin-top: 10px;
   overflow: hidden;
-  height: 470px;
+  height: 540px;
 }
 
 .main_menu {
-  margin-top: 20px;
   overflow: hidden;
   height: 100px;
 
@@ -142,7 +140,8 @@ header {
 
   .set_clock {
     img {
-      width: 45px;
+      width: 40px; 
+      margin-top: -2px;
     }
   }
 
@@ -251,8 +250,161 @@ a.invite_friend:hover {
 span.pink {
   display: block; 
   position: absolute; 
-  top: 220px; 
+  top: 145px;
   font-size: 18px; 
   font-weight: bold; 
   margin-left: 90px;
+}
+
+.alarms_list_badge {
+  margin-top: -90px; 
+  margin-left: 0px;
+}
+
+.melody_form {
+  overflow: hidden; 
+  margin-top: 0px; 
+  padding-top: 5px; margin-left: 0px;
+
+  #music_set_title {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;     
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;     
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;    
+    border-radius: 4px 4px 4px 4px;     
+    color: #555555;     
+    display: inline-block;     
+    font-size: 18px;     
+    height: 35px;     
+    line-height: 20px;     
+    margin-bottom: 10px;     
+    padding: 4px 6px;
+  }
+
+  .btn {
+    margin-top: -5px;
+    margin-left: 10px;
+  }
+}
+
+.music_icon {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.i_like_it {
+  color: #829BAF;
+  cursor: pointer;
+  font-family: tahoma,arial,verdana,sans-serif,Lucida Sans;
+  white-space: nowrap;
+  direction: ltr;
+  text-align: left;  
+}.my_like {
+  color: #2F5879;
+}
+
+.i_like_it:hover {
+  text-decoration: none;
+}
+
+.likes-icon {
+  background: url("like.gif") no-repeat scroll 1px 0 transparent;
+  height: 10px;
+  margin: 2px 2px 0;
+  opacity: 0.4;
+  padding-right: 1px;
+  width: 11px;
+  display: block; 
+  width: 17px; 
+  margin-top: 5px;
+}.my_like {
+  filter: none;
+  opacity: 1;
+}
+
+.likes-count {
+  color: #829BAF;
+}.my_like {
+  color: #2F5879;
+}
+
+#music-list {
+  color: #2F5879;
+  a{
+    color: #2B587A;
+    cursor: pointer;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #2F5879;
+  }
+}
+
+div.nameTrack.pull-left {
+  color: #2B587A;
+  cursor: pointer;
+  text-decoration: none;
+  overflow: hidden; 
+  padding: 0px 10px; 
+  width: 540px;
+
+  b, span {
+    color: #2B587A;
+    display: inline-block;
+    max-width: 180px;
+    overflow: hidden;
+    padding: 0;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+}
+
+div.track_actions {
+  margin-top: 3px;
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+#ajaxsPlayer{
+width:720px;
+margin-top: 15px;
+overflow: hidden;
+}
+.button{
+float:left;
+}
+.play{
+width:16px;
+height:16px;
+background-image:url(/assets/playpause.gif);
+display:block;
+cursor:pointer;
+margin-top: 4px; 
+margin-left: 4px;
+}
+.pause{
+width:16px;
+height:16px;
+background-image:url(/assets/playpause.gif);
+background-position: -64px 16px;
+display:block;
+cursor:pointer;
+display:none;
+margin-top: 4px; 
+margin-left: 4px;
+}
+
+.nameTrack{
+font: 15px/170% Helvetica, 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+color: #666666;
+padding:5px 45px;
+}
+.clear{
+  clear:both; 
+}
+
+#soundmanager-debug {
+  display: none;
 }

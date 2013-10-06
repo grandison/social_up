@@ -1,8 +1,30 @@
-<li id="<%= dom_id(music_set) %>">
-  <%= music_set.title %> <%= music_set.url %>
-  <%= link_to [music_set.alarm, music_set, "like"], remote: true, method: :post do %>
-    <span class="likes-count">
-      <%= music_set.likes_count %>
-    </span>
-  <% end %>
-</li>
+<tr id="<%= dom_id(music_set) %>">
+  <td>
+    <div class="track">
+      <div class="button pull-left">
+        <div class="play" id="<%= index + 1 %>" file="<%= music_set.url %>"></div>
+        <div class="pause"></div>   
+      </div>
+
+      <div class="nameTrack pull-left">
+        <b>Ремм Дигга</b> -
+        <span>
+          <%= music_set.title %>
+        </span>
+      </div>
+
+      <div class='track_actions pull-left'>
+        <%= link_to [music_set.alarm, music_set, "like"], remote: true, method: :post, class: 'pull-right' do %>
+          <span class='i_like_it'>
+            Мне нравится
+          </span>
+          <i class="likes-icon pull-left"></i>
+          <span class='likes-count'>
+            <%= music_set.likes_count %>
+          </span>
+        <% end %>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </td>
+</tr>
