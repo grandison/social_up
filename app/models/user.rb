@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :token, :vk_id, :avatar
+  attr_accessible :name, :token, :vk_id, :avatar, :friends_vk_ids
 
   has_many :alarms
   has_many :likes
@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   end
 
   def friends
-    User.where(vk_id: friends_vk_ids).map(&:user_id)
+    User.where(vk_id: friends_vk_ids)
   end
 
   def friends_alarms
