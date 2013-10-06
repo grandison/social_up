@@ -1,5 +1,5 @@
 <div class='users_block'>
-  <%= paginate users, remote: true %>
+  <%= paginate users, remote: true, left: 1, right: 1, window: 1, outer_window: 0 %>
   <div class='clear'></div>
 
   <% users.each do |user| %>

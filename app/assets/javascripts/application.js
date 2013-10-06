@@ -24,3 +24,7 @@ $(function(){
     VK.api("wall.post", { message: "Выбери мне мелодию для будильника!", attachments: 'photo1921860_312503837,http://vk.com/app3915849' });
   });
 });
+
+soundManager.url = '/soundmanager2.swf';
+soundManager.debugMode = false;
+soundManager.consoleOnly = false;
