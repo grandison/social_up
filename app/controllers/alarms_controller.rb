@@ -20,7 +20,8 @@ class AlarmsController < ApplicationController
   end
 
   def create
-    @alarm = Alarm.create(params[:alarm])
+    @user = User.find_by_vk_id(params[:alarm].delete(:user_id))
+    @alarm = @user.alarms.create(params[:alarm])
     render json: @alarm
   end
 end
