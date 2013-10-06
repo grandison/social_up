@@ -1,1 +1,3 @@
-$('#music-list').append("<%= escape_javascript(render(@music_set)) %>");
+$('#ajaxsPlayer tbody').prepend("<%= escape_javascript(render(
+  'music_sets, music_set', music_set: @music_set
+)) %>");
