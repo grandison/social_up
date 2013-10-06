@@ -101,7 +101,6 @@ GEM
       multi_xml (~> 0.5)
       rack (~> 1.2)
     oj (2.1.4)
-    pg (0.17.0)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -179,7 +178,6 @@ DEPENDENCIES
   jquery-ui-rails
   kaminari
   mysql2
-  pg
   pry-rails
   rails (= 3.2.13)
   russian
