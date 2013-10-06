@@ -5,7 +5,7 @@ class Alarm < ActiveRecord::Base
   has_many :music_sets
 
   def top_music_set
-    music_sets.order("likes_count").first.try(:url)
+    music_sets.order("likes_count DESC").first.try(:url)
   end
 
   def url
