@@ -22,7 +22,7 @@ set :default_environment, {
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 ssh_options[:auth_methods] = "publickey"
-ssh_options[:keys] = ["/home/helloworld/.ssh/notmallster_ireland.pem"]
+ssh_options[:keys] = ["/home/helloworld/.ssh/oms_keypair.pem"]
 ssh_options[:auth_methods] = ["publickey"]
 
 after "deploy", "deploy:migrate"
