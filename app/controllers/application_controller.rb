@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  # protect_from_forgery
   helper_method :current_user
-  before_filter :create_friends
+  # before_filter :create_friends
 
   def create_friends
     if current_user.friends.count < 10
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
       session[:user_id] = 311 if session[:user_id].blank?
       user = User.find(session[:user_id])
     end
-    
+
     user
   end
 end

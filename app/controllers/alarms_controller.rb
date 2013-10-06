@@ -11,4 +11,9 @@ class AlarmsController < ApplicationController
     @alarm = current_user.friends_alarms.find(params[:id])
     @music_set = @alarm.music_sets.new
   end
+
+  def create
+    Alarm.create(params[:alarm])
+    render status: 200, json: "Ok"
+  end
 end
