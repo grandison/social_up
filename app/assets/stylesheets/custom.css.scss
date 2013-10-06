@@ -517,3 +517,39 @@ ul.ui-autocomplete {
 .find_melody_header {
   margin-top: 0px;
 }
+
+.alarm_details {
+  ul.ui-autocomplete {
+    width: 650px;
+    max-width: 650px; 
+    padding-left: 5px; 
+    padding-top: 5px;
+
+    li.ui-menu-item {
+      list-style-type: none;
+      display: block;
+      clear: both;
+
+      a.ui-corner-all {
+        clear: both; 
+        display:block; 
+        overflow: hidden; 
+        height: 30px;
+
+        span.selected_user {
+          color: #333333;
+          display: block;
+          float: left;
+          font-weight: normal;
+          margin-left: 10px;
+          color: #2B588B;
+        }
+
+        strong.pull-left {
+          margin-left: 10px;
+          color: #2B588B;
+        }
+      }
+    }
+}
+}

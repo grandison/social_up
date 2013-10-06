@@ -8,6 +8,7 @@ class AlarmsController < ApplicationController
   end
 
   def show
+    @css_class = 'alarm_details'
     @alarm = Alarm.find(params[:id])
     @music_set = @alarm.music_sets.new
     respond_to do |format|

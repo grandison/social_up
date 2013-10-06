@@ -8,7 +8,9 @@
       {
         source: function( request, response ) { 
           VK.api('audio.search', {q: request.term}, function(r) {
-            var results = $.map(r.response.slice(1, r.response.length), function(value, index){ return {value: value['title'], aid: value['aid'], url: value['url']}; });
+            var results = $.map(r.response.slice(1, r.response.length), function(value, index){ 
+              return {value: value['title'], aid: value['aid'], url: value['url'], artist: value['artist']}; 
+            });
             response(results);
           }); 
         },
@@ -18,7 +20,11 @@
           $("#music_set_author").val(ui.item.artist);
         }
       }
-    );
+    ).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+      return $( "<li>" )
+      .append( "<a style='clear: both;'><strong class='pull-left'>" + item['artist'] + "</strong><span class='selected_user'> " + item['value'] + "</span></a>" )
+      .appendTo( ul );
+    };
   });
 
 var file,id,oldId,oldFile,player=false;
