@@ -1,6 +1,6 @@
 require 'bundler/capistrano'
 
-server 'ec2-54-217-166-202.eu-west-1.compute.amazonaws.com', :app, :web, :db, primary: true
+server 'ec2-54-221-54-139.compute-1.amazonaws.com', :app, :web, :db, primary: true
 
 set :application, "social_up"
 set :user, "ubuntu"
