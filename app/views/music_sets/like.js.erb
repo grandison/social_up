@@ -1,1 +1,5 @@
-$("#<%= dom_id(@music_set) %> .likes-count").text("<%= @music_set.likes_count %>");
+<% @alarm.music_sets.each do |music_set| %>
+  $("#<%= dom_id(music_set) %>  .track_actions").html("<%= escape_javascript(render(
+    'music_sets/track_actions', music_set: music_set
+  )) %>");
+<% end %>

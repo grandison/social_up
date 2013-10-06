@@ -14,15 +14,7 @@
       </div>
 
       <div class='track_actions pull-left'>
-        <%= link_to [music_set.alarm, music_set, "like"], remote: true, method: :post, class: 'pull-right' do %>
-          <span class='i_like_it'>
-            Мне нравится
-          </span>
-          <i class="likes-icon pull-left"></i>
-          <span class='likes-count'>
-            <%= music_set.likes_count %>
-          </span>
-        <% end %>
+        <%= render 'music_sets/track_actions', music_set: music_set %>
       </div>
       <div class="clear"></div>
     </div>

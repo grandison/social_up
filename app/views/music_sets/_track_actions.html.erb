@@ -1,0 +1,9 @@
+<%= link_to [music_set.alarm, music_set, "like"], remote: true, method: :post, class: 'pull-right' do %>
+  <span class='i_like_it <%= liked_it?(music_set) %>'>
+    Мне нравится
+  </span>
+  <i class="likes-icon pull-left <%= liked_it?(music_set) %>"></i>
+  <span class='likes-count <%= liked_it?(music_set) %>'>
+    <%= music_set.likes_count %>
+  </span>
+<% end %>

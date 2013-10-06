@@ -1,5 +1,5 @@
 class MusicSet < ActiveRecord::Base
-  attr_accessible :title, :aid, :url
+  attr_accessible :title, :aid, :url, :author
   belongs_to :alarm
   has_many :likes
 

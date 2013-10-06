@@ -1,3 +1,7 @@
+<h3 class='find_melody_header'>
+  Поиск мелодии
+</h3>
+
 <%= image_tag 'music_icon2.png', class: 'music_icon pull-left' %>
 
 <%= form_for([@alarm, @music_set], remote: true, html: { class: 'melody_form' }) do |f| %>
@@ -5,6 +9,7 @@
 
   <%= f.hidden_field :aid %>
   <%= f.hidden_field :url %>
+  <%= f.hidden_field :author %>
 
   <%= f.submit 'Искать', class: 'btn btn-info' %>
 <% end %>

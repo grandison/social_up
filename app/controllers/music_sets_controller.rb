@@ -7,7 +7,12 @@ class MusicSetsController < ApplicationController
   end
 
   def like
-    current_user.likes.create(music_set_id: @music_set.id)
+    like = current_user.likes.where(music_set_id: @music_set.id)
+    if like.present?
+      like.destroy_all
+    else
+      current_user.likes.create(music_set_id: @music_set.id)
+    end
   end
 
   private

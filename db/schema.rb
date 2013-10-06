@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131005163613) do
+ActiveRecord::Schema.define(:version => 20131006075002) do
 
   create_table "alarms", :force => true do |t|
     t.string   "time"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20131005163613) do
     t.string   "url"
     t.integer  "alarm_id"
     t.integer  "likes_count", :default => 0
+    t.string   "author"
   end
 
   add_index "music_sets", ["alarm_id"], :name => "index_music_sets_on_alarm_id"
