@@ -3,6 +3,7 @@
 
   <%= form_tag users_search_index_url, remote: true do %>
     <%= text_field_tag :by_name %>
+    <%= hidden_field_tag :user_id %>
 
     <%= submit_tag 'Искать', class: 'btn btn-info' %>
   <% end %>
