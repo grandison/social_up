@@ -1,9 +1,7 @@
 <div class='users_block'>
   <%= render 'users/search_form' %>
-  <%= paginate users, remote: true, left: 1, right: 1, window: 1, outer_window: 0 %>
-  <div class='clear_with_height_10'></div>
 
-  <% users.each do |user| %>
-    <%= render 'users/user', user: user %>
-  <% end %>
+  <div class='users_results'>
+    <%= render 'users/users_data', users: users %>
+  </div>
 </div>
