@@ -6,8 +6,10 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # gem 'sqlite3'
-#gem 'pg'
-gem 'mysql2'
+gem 'pg'
+
+gem 'heroku'
+# gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,7 +31,7 @@ gem 'pry-rails'
 gem 'kaminari'
 gem 'jquery-ui-rails'
 gem 'russian'
-gem 'unicorn'
+# gem 'unicorn'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -41,7 +43,7 @@ gem 'unicorn'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-gem 'capistrano'
+# gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
