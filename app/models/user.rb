@@ -7,6 +7,12 @@ class User < ActiveRecord::Base
 
   scope :with_alarms, joins(:alarms)
 
+  scope :by_name, -> (by_name) {
+    condition = by_name.split(' ').map { |query| " lower(name) LIKE ? " }.join('AND')
+    conds = by_name.split(' ').map { |term| "%#{term}%" }
+    where(condition, *conds)
+  }
+
   def frontend_name
     name.split(' ')[0]
   end

@@ -1,15 +1,9 @@
-<div class='invites_container'>
-  <%= link_to '#', class: 'tell_to_friends pull-right' do %>
+<div class='invites_container top_invites pull-right'>
+  <%= link_to '#', class: 'tell_to_friends pull-right tooltipchick', "data-toggle" => 'tooltip', "data-original-title" => 'Рассказать Друзьям', "data-placement" => "left" do %>
     <%= image_tag 'message.png' %>
-    <span class='btn btn-warning'>
-      Рассказать друзьям
-    </span>
   <% end %>
 
-  <%= link_to '#', class: 'invite_friends pull-right' do %>
+  <%= link_to '#', class: 'invite_friends pull-right tooltipchick', "data-toggle" => 'tooltip', "data-original-title" => 'Пригласить Друзей', "data-placement" => "left" do %>
     <%= image_tag 'invite1.png' %>
-    <span class='btn btn-warning'>
-      Пригласить друзей
-    </span>
   <% end %>
 </div>

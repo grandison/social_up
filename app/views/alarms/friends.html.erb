@@ -1,3 +1,40 @@
 <div class='friends_container'>
   <%= render 'users/list', users: @users %>
 </div>
+
+<script>
+  $(function(){
+    function split( val ) {
+      return val.split( /,\s*/ );
+    }
+    function extractLast( term ) {
+      return split( term ).pop();
+    }
+
+    $('#by_name').autocomplete(
+      {
+        source: function( request, response ) { 
+          $.getJSON( "/users_search", {
+             term: extractLast( request.term )
+          }, response );
+        },
+        focus: function( event, ui ) {
+          $('#by_name').val( ui.item.name );
+
+          return false;
+        },
+        select: function( event, ui ) {
+          console.log("ui.item.name: " + ui.item.name)
+          $('#by_name').val( ui.item.name );
+          $( "#user_id" ).val( ui.item.id );
+
+          return false;
+        }
+      }
+    ).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+      return $( "<li>" )
+      .append( "<a style='clear: both;'><img src='" + item.avatar + "' style='width: 40px;' class='thumbnail pull-left' /><span class='selected_user'> " + item.name + "</span></a>" )
+      .appendTo( ul );
+    };
+  });
+</script>
