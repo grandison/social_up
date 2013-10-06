@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   scope :by_name, lambda { |by_name|
     condition = by_name.split(' ').map { |query| " lower(name) LIKE ? " }.join('AND')
-    conds = by_name.downcase.split(' ').map { |term| "%#{term}%" }
+    conds = by_name.mb_chars.downcase.split(' ').map { |term| "%#{term}%" }
     where(condition, *conds)
   }
 
