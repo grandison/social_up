@@ -4,6 +4,7 @@ SocialUp::Application.routes.draw do
       get 'fetch_data'
     end
   end
+  get "/alarm/:id" => "alarms#show"
   resources :alarms, only: [:index, :show, :create] do
     resources :music_sets, only: [:create] do |collection|
       post :like
